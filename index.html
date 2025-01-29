@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Unit Converter</title>
+    <link rel="shortcut icon" href="coin.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="title">Smart Unit Converter</h1>
+            <div class="converter-wrapper">
+                <div class="converter-item">
+                    <label for="unitType">Conversion Type</label>
+                    <select id="unitType" class="select-css">
+                        <option value="temperature">Temperature</option>
+                        <option value="currency">Currency</option>
+                        <option value="volume">Volume</option>
+                        <option value="mass">Mass</option>
+                    </select>
+                </div>
+                <div class="converter-row">
+                    <div class="converter-item">
+                        <label for="unitFrom">From</label>
+                        <select id="unitFrom" class="select-css"></select>
+                    </div>
+                    <div class="converter-item">
+                        <label for="unitTo">To</label>
+                        <select id="unitTo" class="select-css"></select>
+                    </div>
+                </div>
+                <div class="converter-item">
+                    <label for="value">Value</label>
+                    <input type="number" id="value" placeholder="Enter value" step="any" class="input-css" />
+                </div>
+                <button id="convertBtn" class="convert-btn">Convert</button>
+                <div class="result-container">
+                    <h3>Converted Value:</h3>
+                    <p id="result" class="result">-</p>
+                </div>
+            </div>
+        </div>
+        <button id="themeToggle" class="theme-toggle">Toggle Dark Mode</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

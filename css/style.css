@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #5a6268;
+    --background-color: #f4f7f9;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --input-background: #ffffff;
+    --result-color: #4caf50;
+}
+
+.dark-mode {
+    --primary-color: #64b5f6;
+    --secondary-color: #90a4ae;
+    --background-color: #263238;
+    --card-background: #37474f;
+    --text-color: #eceff1;
+    --border-color: #546e7a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --input-background: #455a64;
+    --result-color: #81c784;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.converter-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.converter-row {
+    display: flex;
+    gap: 20px;
+}
+
+.converter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+label {
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.select-css,
+.input-css {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: var(--input-background);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.select-css:focus,
+.input-css:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.convert-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.convert-btn:hover {
+    background-color: #3a7bc8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+
+.result-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--result-color);
+}
+
+.theme-toggle {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .container {
+    padding: 10px;
+    }
+
+    .card {
+    padding: 20px;
+    }
+
+    .converter-row {
+    flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+.converter-item,
+.convert-btn,
+.result-container {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.converter-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.converter-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.converter-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.converter-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.convert-btn {
+    animation-delay: 0.5s;
+}
+.result-container {
+    animation-delay: 0.6s;
+}
